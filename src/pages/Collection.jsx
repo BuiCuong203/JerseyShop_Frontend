@@ -16,11 +16,7 @@ const Collection = () => {
 
   useEffect(() => {
     applyFilter();
-  }, [category, subCategory, search]);
-
-  useEffect(() => {
-    sortProduct();
-  }, [sortType])
+  }, [category, subCategory, search, sortType]);
 
   const toggleCategory = (e) => {
     if(category.includes(e.target.value)) {
@@ -55,23 +51,19 @@ const Collection = () => {
       productsCopy = productsCopy.filter(item => subCategory.includes(item.subCategory))
     }
 
-    setFilterProducts(productsCopy)
-  }
-
-  const sortProduct = () => {
-    var fbCopy = filterProducts.slice();
-
     switch(sortType) {
       case 'low-high':
-        setFilterProducts(fbCopy.sort((a, b) => (a.price - b.price)))
+        setFilterProducts(productsCopy.sort((a, b) => (a.price - b.price)))
         break;
       case 'high-low':
-        setFilterProducts(fbCopy.sort((a, b) => (b.price - a.price)))
+        setFilterProducts(productsCopy.sort((a, b) => (b.price - a.price)))
         break;
       default:
-        applyFilter();
+        setFilterProducts(productsCopy)
         break;
     }
+
+    setFilterProducts(productsCopy)
   }
 
   return (
