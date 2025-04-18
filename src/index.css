@@ -6,7 +6,7 @@ a.active hr {
 }
 
 * {
-    font-family: Outfit;
+    font-family: Nunito / Nunito Sans;
 }
 
 .prata-regular {
@@ -15,8 +15,8 @@ a.active hr {
     font-style: normal;
 }
 
-::-webkit-scrollbar{
-    display: none;
+.no-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 @media (max-width:640px) {

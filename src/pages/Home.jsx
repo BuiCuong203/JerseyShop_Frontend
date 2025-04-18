@@ -1,18 +1,16 @@
 import React from 'react'
-import Hero from '../components/Hero'
+import Slider from '../components/Slider'
 import LastestCollection from '../components/LastestCollection'
 import BestSeller from '../components/BestSeller'
 import OurPolicy from '../components/OurPolicy'
-import Newletterbox from '../components/Newletterbox'
 
 const Home = () => {
   return (
     <div>
-      <Hero />
+      <Slider />
       <LastestCollection />
       <BestSeller />
       <OurPolicy />
-      <Newletterbox />
     </div>
   )
 }

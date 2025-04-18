@@ -7,9 +7,9 @@ const Orders = () => {
   const { products, currency} = useContext(ShopContext);
 
   return (
-    <div className='border-t pt-16'>
+    <div className='border-t pt-16 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[5vw]'>
       <div className='text-2xl'>
-        <Title text1={'MY'} text2={'ORDERS'} />
+        <Title text={'MY ORDERS'} />
       </div>
 
       <div>

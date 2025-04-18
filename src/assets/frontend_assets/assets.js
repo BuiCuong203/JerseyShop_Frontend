@@ -56,7 +56,10 @@ import p_img52 from './p_img52.png'
 
 
 import logo from './logo.png'
-import hero_img from './hero_img.png'
+import slider1 from './slider1.png'
+import slider2 from './slider2.png'
+import slider3 from './slider3.png'
+import slider4 from './slider4.png'
 import cart_icon from './cart_icon.png'
 import bin_icon from './bin_icon.png'
 import dropdown_icon from './dropdown_icon.png'
@@ -76,7 +79,10 @@ import cross_icon from './cross_icon.png'
 
 export const assets = {
     logo,
-    hero_img,
+    slider1,
+    slider2,
+    slider3,
+    slider4,
     cart_icon,
     dropdown_icon,
     exchange_icon,
@@ -178,7 +184,7 @@ export const products = [
         subCategory: "Bottomwear",
         sizes: ["S", "L", "XL"],
         date: 1716621542448,
-        bestseller: false
+        bestseller: true
     },
     {
         _id: "aaaah",

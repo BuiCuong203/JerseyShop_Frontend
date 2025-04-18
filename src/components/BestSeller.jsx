@@ -14,9 +14,9 @@ const BestSeller = () => {
     }, []);
 
     return (
-        <div className='my-10'>
+        <div className='my-10 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[5vw]'>
             <div className='text-center text-3xl py-8'>
-                <Title text1={'BEST'} text2={'SELLERS'} />
+                <Title text={'BÁN CHẠY'} />
                 <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 </p>

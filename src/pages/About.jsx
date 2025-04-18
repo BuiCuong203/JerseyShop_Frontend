@@ -1,47 +1,49 @@
 import React from 'react'
 import Title from '../components/Title'
 import { assets } from '../assets/frontend_assets/assets'
-import Newsletterbox from '../components/Newletterbox'
 
 const About = () => {
   return (
-    <div>
-      <div className='text-2xl text-center pt-8 border-t'>
-        <Title text1={'ABOUT'} text2={'US'} />
+    <div className='border-t px-4 sm:px-[5vw] md:px-[7vw] lg:px-[5vw]'>
+      <div className='text-2xl text-center pt-8'>
+        <Title text={'VỀ CHÚNG TÔI'} />
       </div>
 
       <div className='my-10 flex flex-col md:flex-row gap-16'>
-        <img className='w-full md:max-w-[450px]' src={assets.about_img} alt='' />
+        <img className='w-full md:max-w-[650px]' src={assets.about_img} alt='' />
         <div className='flex flex-col justify-center gap-6 md:w-2/4 text-gray-600'>
-          <p>A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.</p>
-          <p>A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.</p>
-          <b className='text-gray-800'>Our Mission</b>
-          <p>A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.</p>
+          <p>Chào mừng bạn đến với JerseyShop – điểm đến lý tưởng dành cho những người yêu bóng đá và đam mê thời trang thể thao!</p>
+          <p>Chúng tôi chuyên cung cấp áo bóng đá đẹp nhất, áo fanclub, và áo thiết kế theo yêu cầu với chất lượng cao, giá cả hợp lý. Với sứ mệnh "Mang tinh thần bóng đá đến từng nhịp sống", chúng tôi luôn cập nhật những mẫu áo mới nhất từ các câu lạc bộ nổi tiếng trên thế giới cũng như các đội tuyển quốc gia.</p>
+          <p>Tại JerseyShop, bạn không chỉ tìm thấy những chiếc áo đẹp mà còn cảm nhận được niềm đam mê, sự chuyên nghiệp và dịch vụ tận tâm từ đội ngũ của chúng tôi.</p>
+          
+          <div className='my-10'>
+            <b className='text-gray-800'>Liên hệ:</b>
+            <p className='text-gray-500'>68 Bắc Hải P6 Tân Bình Thành phố Hồ Chí Minh</p>
+            <p className='text-gray-500'>Số điện thoại: 0334.940.224 <br /> Email: buimanhcuong2510@gmail.com</p>
+          </div>
         </div>
       </div>
 
       <div className='text-xl py-4'>
-        <Title text1={'WHY'} text2={'CHOOSE US'} />
+        <Title text={'TẠI SAO CHỌN CHÚNG TÔI?'} />
       </div>
 
-      <div className='flex flex-col md:flex-row text-sm mb-20'>
-        <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
-          <b>Quality Assurance:</b>
-          <p className='text-gray-600'>A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.</p>
+      <div className='flex flex-col md:flex-row text-sm mb-5'>
+        <div className='border px-10 md:px-16 py-5 sm:py-15 flex flex-col gap-5'>
+          <b>Chất Lượng cao:</b>
+          <p className='text-gray-600'>Cửa hàng chúng tôi cam kết mang đến những chiếc áo bóng đá chất lượng cao, từ chất liệu đến từng chi tiết nhỏ nhất. Hình ảnh và mô tả sản phẩm trên web luôn đúng thực tế, đảm bảo trải nghiệm mua sắm uy tín cho khách hàng.</p>
         </div>
 
-        <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
-          <b>Convenience:</b>
-          <p className='text-gray-600'>A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.</p>
+        <div className='border px-10 md:px-16 py-5 sm:py-15 flex flex-col gap-5'>
+          <b>Thuận tiện:</b>
+          <p className='text-gray-600'>Chúng tôi ưu tiên sự thuận tiện với giao diện website dễ sử dụng, giúp mua sắm nhanh chóng chỉ trong vài bước. Hỗ trợ đa dạng phương thức thanh toán và giao hàng toàn quốc, đảm bảo khách hàng nhận sản phẩm nhanh và an toàn.</p>
         </div>
 
-        <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
-          <b>Exception Customer Service:</b>
-          <p className='text-gray-600'>A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.</p>
+        <div className='border px-10 md:px-16 py-5 sm:py-15 flex flex-col gap-5'>
+          <b>Chăm sóc khách hàng:</b>
+          <p className='text-gray-600'>Chúng tôi luôn coi trọng việc chăm sóc khách hàng, sẵn sàng lắng nghe và hỗ trợ mọi thắc mắc một cách nhanh chóng, tận tâm. Đội ngũ tư vấn nhiệt tình, chuyên nghiệp giúp khách hàng lựa chọn sản phẩm phù hợp và luôn đồng hành trước – trong – sau khi mua hàng.</p>
         </div>
       </div>
-
-      <Newsletterbox />
     </div>
   )
 }

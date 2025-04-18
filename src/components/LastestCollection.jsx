@@ -13,9 +13,9 @@ const LastestCollection = () => {
     }, [])
 
     return (
-        <div className='my-10'>
+        <div className='my-10 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[5vw]'>
             <div className='text-center py-8 text-3xl'>
-                <Title text1={'LATEST'} text2={'COLLECTIONS'} />
+                <Title text={'MỚI NHẤT'} />
                 <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 </p>

@@ -67,21 +67,21 @@ const Collection = () => {
   }
 
   return (
-    <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t'>
+    <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t px-4 sm:px-[5vw] md:px-[7vw] lg:px-[5vw]'>
       <div className='min-w-60'>
-        <p onClick={() => setShowFilter(!showFilter)} className='my-2 text-xl flex items-center cursor-pointer gap-2'>FILTERS
+        <p onClick={() => setShowFilter(!showFilter)} className='prata-regular text-xl flex items-center cursor-pointer gap-2 mx-2'>Bộ lọc
           <img className={`h-3 sm:hidden ${showFilter? 'rotate-90': ''}`} src={assets.dropdown_icon} alt='' />
         </p>
 
         <div className={`border border-gray-400 rounded-md mt-6 ${showFilter? '': 'hidden'} sm:block`}>
           <div className="flex items-center gap-2 px-4 py-3">
-            <input className='flex-1 outline-none bg-inherit text-md' onChange={(e) => setSearch(e.target.value)} type="text" placeholder='Search' />
+            <input className='flex-1 outline-none bg-inherit text-md' onChange={(e) => setSearch(e.target.value)} type="text" placeholder='Tìm kiếm' />
             <img className='w-4 ' src={assets.search_icon} alt='' />
           </div>
         </div>
         
         <div className={`border border-gray-400 rounded-md pl-5 py-3 mt-6 ${showFilter? '': 'hidden'} sm:block`}>
-          <p className='mb-3 text-sm font-medium'>CATEGORIES</p>
+          <p className='mb-3 text-sm font-medium'>Danh mục</p>
           <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
             <p className='flex gap-2'>
               <input className='w-3' type='checkbox' value={'Men'} onChange={toggleCategory} />Men
@@ -98,7 +98,7 @@ const Collection = () => {
         </div>
 
         <div className={`border border-gray-400 rounded-md pl-5 py-3 my-5 ${showFilter? '': 'hidden'} sm:block`}>
-          <p className='mb-3 text-sm font-medium'>TYPE</p>
+          <p className='mb-3 text-sm font-medium'>Loại</p>
           <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
             <p className='flex gap-2'>
               <input className='w-3' type='checkbox' value={'Topwear'} onChange={toggleSubCategory} /> Topwear
@@ -117,16 +117,16 @@ const Collection = () => {
 
       <div className='flex-1'>
         <div className='flex justify-between text-base sm:text-2xl mb-4'>
-          <Title text1={'ALL'} text2={'COLLECTIONS'} />
+          <Title text={'SẢN PHẨM'} />
 
           <select onChange={(e) => setSortType(e.target.value)} className='border-2 border-gray-400 text-sm px-2 rounded-md' name="" id="">
-            <option value="relavent">Sort by: Relavent</option>
-            <option value="low-high">Sort by: Low to High</option>
-            <option value="high-low">Sort by: High to Low</option>
+            <option value="relavent">Sắp xếp: Mặc định</option>
+            <option value="low-high">Sắp xếp: Thấp - Cao</option>
+            <option value="high-low">Sắp xếp: Cao - Thấp</option>
           </select>
         </div>
 
-        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6'>
+        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-5'>
           {
             filterProducts.map((item, index) => (
               <ProductItem key={index} id={item._id} name={item.name} price={item.price} image={item.image} />

@@ -9,27 +9,27 @@ const Navbar = () => {
     const {getCartCount} = useContext(ShopContext);
 
     return (
-        <div className='flex items-center justify-between py-5 font-medium'>
+        <div className='flex items-center justify-between py-5 font-medium bg-[#FCFCFC] px-4 sm:px-[5vw] md:px-[7vw] lg:px-[5vw]'>
             <Link to='/'><img src={assets.logo} className='w-36' alt="" /></Link>
 
             <ul className='hidden sm:flex gap-5 text-sm text-gray-700'>
                 <NavLink to='/' className='flex flex-col items-center gap-1'>
-                    <p>HOME</p>
+                    <p>TRANG CHỦ</p>
                     <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
                 </NavLink>
 
                 <NavLink to='/collection' className='flex flex-col items-center gap-1'>
-                    <p>COLLECTION</p>
+                    <p>CỬA HÀNG</p>
                     <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
                 </NavLink>
 
                 <NavLink to='/about' className='flex flex-col items-center gap-1'>
-                    <p>ABOUT</p>
+                    <p>VỀ CHÚNG TÔI</p>
                     <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
                 </NavLink>
 
-                <NavLink to='/contact' className='flex flex-col items-center gap-1'>
-                    <p>CONTACT</p>
+                <NavLink to='/wishlist' className='flex flex-col items-center gap-1'>
+                    <p>YÊU THÍCH</p>
                     <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
                 </NavLink>
             </ul>
@@ -62,10 +62,10 @@ const Navbar = () => {
                         <p>Back</p>
                     </div>
 
-                    <NavLink onClick={() => setVisible(false)} className='py-2 pl-6' to='/'>HOME</NavLink>
-                    <NavLink onClick={() => setVisible(false)} className='py-2 pl-6' to='/collection'>COLLECTION</NavLink>
-                    <NavLink onClick={() => setVisible(false)} className='py-2 pl-6' to='/about'>ABOUT</NavLink>
-                    <NavLink onClick={() => setVisible(false)} className='py-2 pl-6' to='/contact'>CONTACT</NavLink>
+                    <NavLink onClick={() => setVisible(false)} className='py-2 pl-6' to='/'>TRANG CHỦ</NavLink>
+                    <NavLink onClick={() => setVisible(false)} className='py-2 pl-6' to='/collection'>CỬA HÀNG</NavLink>
+                    <NavLink onClick={() => setVisible(false)} className='py-2 pl-6' to='/about'>VỀ CHÚNG TÔI</NavLink>
+                    <NavLink onClick={() => setVisible(false)} className='py-2 pl-6' to='/wishlist'>YÊU THÍCH</NavLink>
                 </div>
             </div>
         </div>
