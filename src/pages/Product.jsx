@@ -11,12 +11,15 @@ const Product = () => {
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState('');
   const [size, setSize] = useState('');
+  const [quantity, setQuantity] = useState(1);
 
-  const fetchProductData = async () => {
+  const fetchProductData = () => {
     products.map((item) => {
       if(item._id === productId){
         setProductData(item)
         setImage(item.image[0])
+        setSize('')
+        setQuantity(1)
         return null;
       }
     })
@@ -64,8 +67,12 @@ const Product = () => {
         
           <p className='mt-5 text-gray-500 md:w-4/5'>{productData.description}</p>
         
-          <div className='flex flex-col gap-4 my-8'>
-            <p>Select Size</p>
+          <div className='flex gap-4 my-8'>
+            <p className='text-lg font-medium'>Kho:</p>
+          </div>
+
+          <div className='flex gap-4 my-8'>
+            <p className='text-lg font-medium pt-1'>Kích thước:</p>
 
             <div className='flex gap-2'>
               {
@@ -76,13 +83,23 @@ const Product = () => {
             </div>
           </div>
 
-          <button onClick={() => addToCart(productData._id, size)} className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700 cursor-pointer'>ADD TO CART</button>
+          <div className='flex gap-4 my-8'>
+            <p className='text-lg font-medium pt-2'>Số lượng:</p>
+
+            <div className='border border-gray-300 text-gray-500 text-2xl font-medium py-1'>
+              <button onClick={() => {quantity > 1 ? setQuantity(quantity - 1) : setQuantity(1)}} className='px-3 cursor-pointer'>-</button>
+              <input onChange={(e) => setQuantity(Number(e.target.value))} className='w-15 text-gray-600 text-xl text-center focus:outline-none [&::-webkit-inner-spin-button]:appearance-none' type="number" min={1} value={quantity} />
+              <button onClick={() => setQuantity(quantity + 1)} className='px-3 cursor-pointer'>+</button>
+            </div>
+          </div>
+
+          <button onClick={() => addToCart(productData._id, size, quantity)} className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700 cursor-pointer'>THÊM VÀO GIỎ HÀNG</button>
           <hr className='mt-8 sm:w-4/5 opacity-10' />
 
           <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1'>
-            <p>100% Original product.</p>
-            <p>Cash on delivery is available on this product.</p>
-            <p>Easy return and exchange policy within 7 days.</p>
+            <p>Sản phẩm chất lượng cao nhất thị trường</p>
+            <p>Sản phẩm này có thể thanh toán bằng tiền mặt khi nhận hàng.</p>
+            <p>Chính sách đổi trả dễ dàng trong vòng 7 ngày.</p>
           </div>
         </div>
       </div>
@@ -90,8 +107,8 @@ const Product = () => {
       {/* Description $ Review Section */}
       <div className='mt-20'>
         <div className='flex'>
-          <b className='border px-5 py-3 text-sm'>Description</b>
-          <p className='border px-5 py-3 text-sm'>Reviews (122)</p>
+          <b className='border px-5 py-3 text-sm'>Mô tả</b>
+          <p className='border px-5 py-3 text-sm'>Đánh giá (122)</p>
         </div>
 
         <div className='flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500'>

@@ -1,5 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Title from '../components/Title'
+import OurPolicy from '../components/OurPolicy'
 import { assets } from '../assets/frontend_assets/assets'
 
 const About = () => {
@@ -9,22 +11,27 @@ const About = () => {
         <Title text={'VỀ CHÚNG TÔI'} />
       </div>
 
-      <div className='my-10 flex flex-col md:flex-row gap-16'>
+      <div className='mt-10 flex flex-col md:flex-row gap-16'>
         <img className='w-full md:max-w-[650px]' src={assets.about_img} alt='' />
         <div className='flex flex-col justify-center gap-6 md:w-2/4 text-gray-600'>
           <p>Chào mừng bạn đến với JerseyShop – điểm đến lý tưởng dành cho những người yêu bóng đá và đam mê thời trang thể thao!</p>
           <p>Chúng tôi chuyên cung cấp áo bóng đá đẹp nhất, áo fanclub, và áo thiết kế theo yêu cầu với chất lượng cao, giá cả hợp lý. Với sứ mệnh "Mang tinh thần bóng đá đến từng nhịp sống", chúng tôi luôn cập nhật những mẫu áo mới nhất từ các câu lạc bộ nổi tiếng trên thế giới cũng như các đội tuyển quốc gia.</p>
           <p>Tại JerseyShop, bạn không chỉ tìm thấy những chiếc áo đẹp mà còn cảm nhận được niềm đam mê, sự chuyên nghiệp và dịch vụ tận tâm từ đội ngũ của chúng tôi.</p>
           
-          <div className='my-10'>
+          <Link to='/policy'><u className='text-lg font-normal hover:opacity-75'>Chính sách bảo hành</u></Link>
+
+          <div>
             <b className='text-gray-800'>Liên hệ:</b>
-            <p className='text-gray-500'>68 Bắc Hải P6 Tân Bình Thành phố Hồ Chí Minh</p>
-            <p className='text-gray-500'>Số điện thoại: 0334.940.224 <br /> Email: buimanhcuong2510@gmail.com</p>
+            <p className='text-gray-500 font-bold'>Địa chỉ: <span className='text-gray-500 font-normal'>Số 26, Đường Khương Thượng, Đống Đa, Hà Nội</span></p>
+            <p className='text-gray-500 font-bold'>Số điện thoại: <span className='text-gray-500 font-normal'>0334.940.224</span></p>
+            <p className='text-gray-500 font-bold'>Email: <span className='text-gray-500 font-normal'>buimanhcuong2510@gmail.com</span></p>
           </div>
         </div>
       </div>
 
-      <div className='text-xl py-4'>
+      <OurPolicy />
+
+      <div className='text-xl pt-20'>
         <Title text={'TẠI SAO CHỌN CHÚNG TÔI?'} />
       </div>
 
@@ -44,6 +51,8 @@ const About = () => {
           <p className='text-gray-600'>Chúng tôi luôn coi trọng việc chăm sóc khách hàng, sẵn sàng lắng nghe và hỗ trợ mọi thắc mắc một cách nhanh chóng, tận tâm. Đội ngũ tư vấn nhiệt tình, chuyên nghiệp giúp khách hàng lựa chọn sản phẩm phù hợp và luôn đồng hành trước – trong – sau khi mua hàng.</p>
         </div>
       </div>
+
+      
     </div>
   )
 }

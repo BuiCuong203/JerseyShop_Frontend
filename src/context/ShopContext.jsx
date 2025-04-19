@@ -12,7 +12,7 @@ const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   const navigate = useNavigate();
 
-  const addToCart = (itemId, size) => {
+  const addToCart = (itemId, size, quantity) => {
     var cartData = structuredClone(cartItems);
 
     if(!size){
@@ -21,13 +21,13 @@ const ShopContextProvider = (props) => {
 
     if(cartData[itemId]){
       if(cartData[itemId][size]){
-        cartData[itemId][size] += 1;
+        cartData[itemId][size] += quantity;
       }else{
-        cartData[itemId][size] = 1;
+        cartData[itemId][size] = quantity;
       }
     }else{
       cartData[itemId] = {};
-      cartData[itemId][size] = 1;
+      cartData[itemId][size] = quantity;
     }
 
     setCartItems(cartData);

@@ -9,13 +9,13 @@ import Cart from "./pages/Cart"
 import Login from "./pages/Login"
 import PlaceOrder from "./pages/PlaceOrder"
 import Orders from "./pages/Orders"
+import Policy from "./pages/Policy"
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { ToastContainer } from 'react-toastify';
 
 const App = () => {
   return (
-    // className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[5vw]"
     <div>
       <ToastContainer />
       <Navbar />
@@ -29,6 +29,7 @@ const App = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/place-order' element={<PlaceOrder />} />
         <Route path='/orders' element={<Orders />} />
+        <Route path='/policy' element={<Policy />} />
       </Routes>
       <Footer />
     </div>

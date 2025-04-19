@@ -16,7 +16,7 @@ const PlaceOrder = () => {
       {/* Left Side */}
       <div className='flex flex-col gap-4 w-full sm:max-w-[480px]'>
         <div className='text-xl sm:text-2xl my-3'>
-          <Title text={'DELIVERY INFORMATION'} />
+          <Title text={'THÔNG TIN VẬN CHUYỂN'} />
         </div>
 
         <FormInfo />
@@ -29,7 +29,7 @@ const PlaceOrder = () => {
         </div>
 
         <div className='mt-12'>
-          <Title text={'PAYMENT METHOD'} />
+          <Title text={'PHƯƠNG THỨC THANH TOÁN'} />
         
           {/* Payment Method Selection */}
           <div className='flex gap-3 flex-col lg:flex-row'>
@@ -45,12 +45,12 @@ const PlaceOrder = () => {
 
             <div onClick={() => setMethod('cod')} className='flex items-center gap-3 border border-gray-400 p-2 px-3 cursor-pointer'>
               <p className={`min-w-3.5 h-3.5 border border-gray-400 rounded-full ${method === 'cod' ? 'bg-green-600' : ''}`}></p>
-              <p className='text-gray-500 text-sm font-medium mx-4'>CASH ON DELIVERY</p>
+              <p className='text-gray-500 text-sm font-medium mx-4'>TIỀN MẶT</p>
             </div>
           </div>
 
           <div className='w-full text-end mt-8'>
-            <button onClick={() => navigate('/orders')} className='bg-black text-white px-16 py-3 text-sm cursor-pointer'>PLACE ORDER</button>
+            <button onClick={() => navigate('/orders')} className='bg-black text-white px-16 py-3 text-sm cursor-pointer'>ĐẶT HÀNG</button>
           </div>
         </div>
       </div>

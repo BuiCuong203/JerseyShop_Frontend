@@ -3,6 +3,7 @@ import { ShopContext } from '../context/ShopContext'
 import Title from '../components/Title';
 import { assets } from '../assets/frontend_assets/assets';
 import CartTotal from '../components/CartTotal';
+import EmptyCart from '../components/EmptyCart';
 
 const Cart = () => {
 
@@ -25,10 +26,10 @@ const Cart = () => {
     setCartData(tempData)
   }, [cartItems])
 
-  return (
+  return cartData.length ? (
     <div className='border-t pt-14 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[5vw]'>
       <div className='text-2xl mb-3'>
-        <Title text={'YOUR CART'} />
+        <Title text={'GIỎ HÀNG'} />
       </div>
 
       <div>
@@ -64,12 +65,12 @@ const Cart = () => {
         <div className='w-full sm:w-[450px]'>
           <CartTotal />
           <div className='w-full text-end'>
-            <button onClick={() => navigate('/place-order')} className='bg-black text-white text-sm my-8 px-8 py-3 cursor-pointer'>PROCEED TO CHECKOUT</button>
+            <button onClick={() => navigate('/place-order')} className='bg-black text-white text-sm my-8 px-8 py-3 cursor-pointer'>THANH TOÁN</button>
           </div>
         </div>
       </div>
     </div>
-  )
+  ) : <EmptyCart />
 }
 
 export default Cart
