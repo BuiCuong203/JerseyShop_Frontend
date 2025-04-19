@@ -16,7 +16,7 @@ const ShopContextProvider = (props) => {
     var cartData = structuredClone(cartItems);
 
     if(!size){
-      toast.error("PLease select product size");
+      toast.error("Bạn chưa chọn kích thước!!!");
     }
 
     if(cartData[itemId]){

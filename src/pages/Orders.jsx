@@ -9,7 +9,7 @@ const Orders = () => {
   return (
     <div className='border-t pt-16 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[5vw]'>
       <div className='text-2xl'>
-        <Title text={'MY ORDERS'} />
+        <Title text={'ĐƠN HÀNG CỦA TÔI'} />
       </div>
 
       <div>
