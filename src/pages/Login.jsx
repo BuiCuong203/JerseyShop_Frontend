@@ -5,6 +5,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
+import GoogleIcon from '@mui/icons-material/Google';
 import { CustomTextField, CustomInput, CustomInputLabel } from '../Custom/CustomUi'
 
 const Login = () => {
@@ -50,9 +51,14 @@ const Login = () => {
 
       <button className='w-full bg-black text-white font-light px-8 py-2 cursor-pointer'>Đăng nhập</button>
       
-      <div className='w-full flex justify-between text-sm mt-[-8px]'>
-        <p onClick={() => navigate('/register')} className='cursor-pointer'>Tạo tài khoản</p>
-        <p className='cursor-pointer'>Quên mật khẩu</p>
+      <div className='flex justify-between text-md'>
+        <p className='pt-2'>Hoặc đăng nhập với</p>
+        <div className='border border-gray-300 p-2 mx-3 rounded-full cursor-pointer bg-[#FCFCFC] hover:opacity-75'><GoogleIcon className=' text-red-500'/></div>
+      </div>
+
+      <div className='flex justify-between text-md'>
+          <p>Bạn chưa có tài khoản?</p>
+          <u onClick={() => navigate('/register')} className='px-1 cursor-pointer hover:opacity-75'>Đăng ký</u>
       </div>
     </form>
   )

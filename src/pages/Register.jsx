@@ -91,8 +91,9 @@ const Register = () => {
 
             <button className='w-full bg-black text-white font-light px-8 py-2 cursor-pointer'>Đăng ký</button>
             
-            <div className='w-full flex justify-between text-sm mt-[-8px]'>
-                <p onClick={() => navigate('/login')} className='cursor-pointer'>Đăng nhập ngay</p>
+            <div className='flex justify-between text-md'>
+                <p>Bạn đã có tài khoản?</p>
+                <u onClick={() => navigate('/login')} className='px-1 cursor-pointer hover:opacity-75'>Đăng nhập ngay</u>
             </div>
         </form>
     )
