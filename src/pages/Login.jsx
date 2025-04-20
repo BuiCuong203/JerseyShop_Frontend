@@ -1,47 +1,29 @@
-import React, { useState, useRef } from 'react'
-import ReCAPTCHA from 'react-google-recaptcha';
-import { CustomTextField } from '../Custom/CustomUi'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import FormControl from '@mui/material/FormControl';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import InputAdornment from '@mui/material/InputAdornment';
+import IconButton from '@mui/material/IconButton';
+import { CustomTextField, CustomInput, CustomInputLabel } from '../Custom/CustomUi'
 
 const Login = () => {
+  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
-  const [currentState, setCurrentState] = useState(false);
-  const [captchaToken, setCaptchaToken] = useState(null);
-  const recaptchaRef = useRef(null);
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-
-    //Logic khi submit form gửi token lên server
-
-    recaptchaRef.current.reset();
-    setCaptchaToken(null);
   }
-
-  const onCaptchaChange = (token) => {
-    setCaptchaToken(token);
-  };
 
   return (
     <form onSubmit={onSubmitHandler} className='flex flex-col items-center w-[90%] sm:max-w-96 m-auto mt-14 gap-4 text-gray-800'>
       <div className='inline-flex items-center gap-2 mb-2 mt-10'>
-      <p className='prata-regular text-3xl'>{currentState ? 'Đăng ký' : 'Đăng nhập'}</p>
+        <p className='prata-regular text-3xl'>Đăng nhập</p>
       </div>
-
-      {
-        currentState &&
-        <CustomTextField
-          id="outlined-basic"
-          label="Tên người dùng"
-          type="text"
-          variant="outlined"
-          size="small"
-          fullWidth
-          required
-        />
-      }
       
       <CustomTextField
-        id="outlined-basic"
         label="Email"
         type="email"
         variant="outlined"
@@ -50,47 +32,27 @@ const Login = () => {
         required
       />
 
-      <CustomTextField
-        id="outlined-basic"
-        label="Mật khẩu"
-        type="password"
-        variant="outlined"
-        size="small"
-        fullWidth
-        required
-      />
-
-      {
-        currentState &&
-        <CustomTextField
-          id="outlined-basic"
-          label="Nhập lại mật khẩu"
-          type="password"
-          variant="outlined"
-          size="small"
-          fullWidth
-          required
+      <FormControl size='small' fullWidth>
+        <CustomInputLabel required>Mật khẩu</CustomInputLabel>
+        <CustomInput
+            type={showPassword ? 'text' : 'password'}
+            endAdornment={
+                <InputAdornment>
+                    <IconButton onClick={handleClickShowPassword} >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                </InputAdornment>
+            }
+            label="Mật khẩu"
+            required
         />
-        
-      }
-      
-      {
-        currentState &&
-        <div className='w-full'>
-          <ReCAPTCHA sitekey="6LcMuxUrAAAAAJUjH0M18y7ykDBtpBB6qEWl16-d" onChange={onCaptchaChange} ref={recaptchaRef} />
-        </div>
-        
-      }
+      </FormControl>
 
-      <button className='w-full bg-black text-white font-light px-8 py-2 cursor-pointer'>{currentState ? 'Đăng ký' : 'Đăng nhập'}</button>
+      <button className='w-full bg-black text-white font-light px-8 py-2 cursor-pointer'>Đăng nhập</button>
       
       <div className='w-full flex justify-between text-sm mt-[-8px]'>
+        <p onClick={() => navigate('/register')} className='cursor-pointer'>Tạo tài khoản</p>
         <p className='cursor-pointer'>Quên mật khẩu</p>
-        {
-          currentState 
-          ? <p onClick={() =>  setCurrentState(false)} className='cursor-pointer'>Đăng nhập ngay</p>
-          : <p onClick={() => setCurrentState(true)} className='cursor-pointer'>Tạo tài khoản</p>
-        }
       </div>
     </form>
   )

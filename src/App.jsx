@@ -14,6 +14,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { ToastContainer } from 'react-toastify';
 import OrderSuccess from "./pages/OrderSuccess";
+import Register from "./pages/Register";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
         <Route path='/product/:productId' element={<Product />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
         <Route path='/place-order' element={<PlaceOrder />} />
         <Route path='/orders' element={<Orders />} />
         <Route path='/policy' element={<Policy />} />
