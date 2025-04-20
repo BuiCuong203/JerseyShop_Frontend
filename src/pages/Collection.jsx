@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../context/ShopContext'
-import { assets } from '../assets/frontend_assets/assets'
 import Title from '../components/Title'
 import ProductItem from '../components/ProductItem'
+import { RiArrowDropRightLine } from "react-icons/ri";
+import { CiSearch } from "react-icons/ci";
 
 const Collection = () => {
 
@@ -70,13 +71,13 @@ const Collection = () => {
     <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t px-4 sm:px-[5vw] md:px-[7vw] lg:px-[5vw]'>
       <div className='min-w-60'>
         <p onClick={() => setShowFilter(!showFilter)} className='prata-regular text-xl flex items-center cursor-pointer gap-2 mx-2'>Bộ lọc
-          <img className={`h-3 sm:hidden ${showFilter? 'rotate-90': ''}`} src={assets.dropdown_icon} alt='' />
+          <RiArrowDropRightLine className={`text-[30px] sm:hidden ${showFilter? 'rotate-90': ''}`} />
         </p>
 
         <div className={`border border-gray-400 rounded-md mt-6 ${showFilter? '': 'hidden'} sm:block`}>
           <div className="flex items-center gap-2 px-4 py-3">
             <input className='flex-1 outline-none bg-inherit text-md' onChange={(e) => setSearch(e.target.value)} type="text" placeholder='Tìm kiếm' />
-            <img className='w-4 ' src={assets.search_icon} alt='' />
+            <CiSearch className='text-[20px] text-gray-500' />
           </div>
         </div>
         

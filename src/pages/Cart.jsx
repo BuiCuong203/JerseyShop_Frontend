@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import Title from '../components/Title';
-import { assets } from '../assets/frontend_assets/assets';
 import CartTotal from '../components/CartTotal';
 import EmptyCart from '../components/EmptyCart';
+import { TiDeleteOutline } from "react-icons/ti";
 
 const Cart = () => {
 
@@ -52,9 +52,19 @@ const Cart = () => {
                   </div>
                 </div>
 
-                <input onChange={(e) => e.target.value === '' || e.target.value === 0 ? updateQuantity(item._id, item.size, 0) : updateQuantity(item._id, item.size, Number(e.target.value))} className='border max-w-10 sm:max-w-20 px-1 sm:px-2 py-1' type='number' min={1} defaultValue={item.quantity} />
+                <div className='border border-gray-300 text-gray-500 text-2xl font-medium'>
+                  <button onClick={() => updateQuantity(item._id, item.size, item.quantity - 1)} className='px-3 cursor-pointer'>-</button>
+                  <input
+                    onChange={(e) => updateQuantity(item._id, item.size, Number(e.target.value))}
+                    className='w-15 text-gray-600 text-xl text-center focus:outline-none [&::-webkit-inner-spin-button]:appearance-none'
+                    type="number"
+                    min={1}
+                    value={item.quantity}
+                  />
+                  <button onClick={() => updateQuantity(item._id, item.size, item.quantity + 1)} className='px-3 cursor-pointer'>+</button>
+                </div>
               
-                <img onClick={() => updateQuantity(item._id, item.size, 0)} className='w-4 mr-4 sm:w-5 cursor-pointer' src={assets.bin_icon} alt="" />
+                <TiDeleteOutline onClick={() => updateQuantity(item._id, item.size, 0)} className='text-[25px] cursor-pointer' />
               </div>
             );
           })

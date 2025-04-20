@@ -1,9 +1,8 @@
 import React from 'react'
 import { assets } from '../assets/frontend_assets/assets'
 import { Link } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
-import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { FaFacebook, FaInstagram, FaPhoneAlt } from "react-icons/fa";
+import { HiMail } from "react-icons/hi";
 
 const Footer = () => {
     return (
@@ -64,17 +63,17 @@ const Footer = () => {
 
                 <div>
                     <p className='text-xl font-bold pb-2'>LIÊN HỆ</p>
-                    <div className='py-3'>
-                        <FontAwesomeIcon icon={faFacebook} className='pr-4' size="2x" />
-                        <FontAwesomeIcon icon={faInstagram} className='pr-4' size="2x" />
+                    <div className='flex py-2'>
+                        <FaFacebook className='text-[30px] mr-2' />
+                        <FaInstagram className='text-[30px]' />
                     </div>
-                    <ul>
+                    <ul className='py-1'>
                         <li className='flex items-center gap-3 py-1'>
-                            <FontAwesomeIcon icon={faPhone} />
+                            <FaPhoneAlt className='text-[20px]' />
                             <p className='text-lg font-normal'>0334.940.224</p>
                         </li>
                         <li className='flex items-center gap-3 py-1'>
-                            <FontAwesomeIcon icon={faEnvelope} />
+                            <HiMail className='text-[20px]' />
                             <p className='text-lg font-normal'>buimanhcuong2510@gmail.com</p>
                         </li>
                     </ul>

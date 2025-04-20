@@ -5,7 +5,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
-import GoogleIcon from '@mui/icons-material/Google';
+import { FcGoogle } from "react-icons/fc";
 import { CustomTextField, CustomInput, CustomInputLabel } from '../Custom/CustomUi'
 
 const Login = () => {
@@ -53,7 +53,7 @@ const Login = () => {
       
       <div className='flex justify-between text-md'>
         <p className='pt-2'>Hoặc đăng nhập với</p>
-        <div className='border border-gray-300 p-2 mx-3 rounded-full cursor-pointer bg-[#FCFCFC] hover:opacity-75'><GoogleIcon className=' text-red-500'/></div>
+        <div className='border border-gray-300 rounded-full p-1 text-[25px] ml-2 cursor-pointer hover:opacity-75'><FcGoogle /></div>
       </div>
 
       <div className='flex justify-between text-md'>

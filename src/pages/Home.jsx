@@ -3,7 +3,6 @@ import Slider from '../components/Slider'
 import LastestCollection from '../components/LastestCollection'
 import BestSeller from '../components/BestSeller'
 import OurPolicy from '../components/OurPolicy'
-import EmptyCart from '../components/EmptyCart'
 
 const Home = () => {
   return (
