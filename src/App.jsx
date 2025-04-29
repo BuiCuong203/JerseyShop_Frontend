@@ -15,6 +15,7 @@ import Footer from "./components/Footer";
 import { ToastContainer } from 'react-toastify';
 import OrderSuccess from "./pages/OrderSuccess";
 import Register from "./pages/Register";
+import UserProfile from "./pages/UserProfile"
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
         <Route path='/orders' element={<Orders />} />
         <Route path='/policy' element={<Policy />} />
         <Route path='/order-success' element={<OrderSuccess />} />
+        <Route path='/user-profile' element={<UserProfile />} />
       </Routes>
       <Footer />
     </div>

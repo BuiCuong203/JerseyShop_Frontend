@@ -63,8 +63,8 @@ import slider4 from './slider4.png'
 import star_dull_icon from './star_dull_icon.png'
 import star_icon from './star_icon.png'
 import about_img from './about_img.png'
-import razorpay_logo from './razorpay_logo.png'
-import stripe_logo from './stripe_logo.png'
+import vnpay_logo from './vnpay_logo.png'
+import zalopay_logo from './zalopay_logo.png'
 
 export const assets = {
     logo,
@@ -73,8 +73,8 @@ export const assets = {
     slider3,
     slider4,
     about_img,
-    razorpay_logo,
-    stripe_logo,
+    zalopay_logo,
+    vnpay_logo,
     star_dull_icon,
     star_icon,
 }

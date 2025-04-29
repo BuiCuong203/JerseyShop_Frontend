@@ -60,6 +60,9 @@ const Login = () => {
           <p>Bạn chưa có tài khoản?</p>
           <u onClick={() => navigate('/register')} className='px-1 cursor-pointer hover:opacity-75'>Đăng ký</u>
       </div>
+      <div className='flex justify-between text-md'>
+          <u className='px-1 cursor-pointer hover:opacity-75'>Quên mật khẩu</u>
+      </div>
     </form>
   )
 }

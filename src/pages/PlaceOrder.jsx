@@ -33,14 +33,16 @@ const PlaceOrder = () => {
         
           {/* Payment Method Selection */}
           <div className='flex gap-3 flex-col lg:flex-row'>
-            <div onClick={() => setMethod('stripe')} className='flex items-center gap-3 border border-gray-400 p-2 px-3 cursor-pointer'>
-              <p className={`min-w-3.5 h-3.5 border border-gray-400 rounded-full ${method === 'stripe' ? 'bg-green-600' : ''}`}></p>
-              <img className='h-5 mx-4' src={assets.stripe_logo} alt="" />
+            <div onClick={() => setMethod('vnpay')} className='flex items-center gap-3 border border-gray-400 p-2 px-3 cursor-pointer'>
+              <p className={`min-w-3.5 h-3.5 border border-gray-400 rounded-full ${method === 'vnpay' ? 'bg-green-600' : ''}`}></p>
+              <img className='h-5 ml-4' src={assets.vnpay_logo} alt="" />
+              <p className='text-gray-500 text-sm font-medium mr-4'>VN PAY</p>
             </div>
 
-            <div onClick={() => setMethod('razorpay')} className='flex items-center gap-3 border border-gray-400 p-2 px-3 cursor-pointer'>
-              <p className={`min-w-3.5 h-3.5 border border-gray-400 rounded-full ${method === 'razorpay' ? 'bg-green-600' : ''}`}></p>
-              <img className='h-5 mx-4' src={assets.razorpay_logo} alt="" />
+            <div onClick={() => setMethod('zalopay')} className='flex items-center gap-3 border border-gray-400 p-2 px-3 cursor-pointer'>
+              <p className={`min-w-3.5 h-3.5 border border-gray-400 rounded-full ${method === 'zalopay' ? 'bg-green-600' : ''}`}></p>
+              <img className='h-5 ml-4' src={assets.zalopay_logo} alt="" />
+              <p className='text-gray-500 text-sm font-medium mr-4'>ZALO PAY</p>
             </div>
 
             <div onClick={() => setMethod('cod')} className='flex items-center gap-3 border border-gray-400 p-2 px-3 cursor-pointer'>

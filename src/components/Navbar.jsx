@@ -42,9 +42,9 @@ const Navbar = () => {
                 <div className='group relative'>
                     <Link to={'/login'}><FaRegUser className='text-[23px] cursor-pointer' /></Link>
 
-                    <div className='absolute z-20 group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
+                    <div className='absolute z-20 group-hover:block hidden right-0 pt-4'>
                         <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded'>
-                            <p className='cursor-pointer hover:text-black'> Thông tin</p>
+                            <Link to='/user-profile'><p className='cursor-pointer hover:text-black'> Thông tin</p></Link>
                             <Link to='/orders'><p className='cursor-pointer hover:text-black'>Đơn hàng</p></Link>
                             <p className='cursor-pointer hover:text-black'> Đăng xuất</p>
                         </div>

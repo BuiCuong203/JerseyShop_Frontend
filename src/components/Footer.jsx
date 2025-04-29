@@ -3,10 +3,11 @@ import { assets } from '../assets/frontend_assets/assets'
 import { Link } from 'react-router-dom'
 import { FaFacebook, FaInstagram, FaPhoneAlt } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
+import Chatbot from './Chatbot'
 
 const Footer = () => {
     return (
-        <div className='bg-[#FCFCFC] pt-40'>
+        <div className='bg-[#FCFCFC] mt-40'>
             <hr />
             <div className='flex flex-col grid md:grid-cols-2 lg:grid-cols-4 gap-14 my-15 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[5vw]'>
                 <div>
@@ -93,6 +94,8 @@ const Footer = () => {
             <div>
                 <p className='border-t border-gray-300 py-3 text-md text-center'>Bản quyền © 2025 của JeyseyShop.com - Thiết kế bởi nhóm 9</p>
             </div>
+
+            <Chatbot />
         </div>
     )
 }

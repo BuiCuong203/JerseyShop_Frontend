@@ -12,6 +12,12 @@ export const CustomTextField = styled(TextField) ({
     '& label.Mui-focused': {
         color: 'black',
     },
+    '& input[type=number]': {
+        '&::-webkit-inner-spin-button': {
+            WebkitAppearance: 'none',
+            margin: 0,
+        }
+    },
 });
 
 export const CustomInput = styled(OutlinedInput)({

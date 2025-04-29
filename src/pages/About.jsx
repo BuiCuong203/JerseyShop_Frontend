@@ -51,8 +51,6 @@ const About = () => {
           <p className='text-gray-600'>Chúng tôi luôn coi trọng việc chăm sóc khách hàng, sẵn sàng lắng nghe và hỗ trợ mọi thắc mắc một cách nhanh chóng, tận tâm. Đội ngũ tư vấn nhiệt tình, chuyên nghiệp giúp khách hàng lựa chọn sản phẩm phù hợp và luôn đồng hành trước – trong – sau khi mua hàng.</p>
         </div>
       </div>
-
-      
     </div>
   )
 }
