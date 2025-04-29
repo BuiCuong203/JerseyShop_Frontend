@@ -20,7 +20,7 @@ import { RiDeleteBinLine } from "react-icons/ri";
 
 const Cart = () => {
 
-  const {products, currency, cartItems, updateQuantity, navigate} = useContext(ShopContext);
+  const {products, currency, cartItems, setCartItems, updateQuantity, navigate} = useContext(ShopContext);
   const [cartData, setCartData] = useState([]);
   const [selected, setSelected] = useState([]);
 
@@ -68,6 +68,17 @@ const Cart = () => {
     setSelected(newSelected);
   };
 
+  const handleDeleteSelectedCart = () => {
+    const temp = structuredClone(cartItems);
+
+    for(const item of selected){
+      temp[cartData[item].id][cartData[item].size] = 0;
+    }
+
+    setCartItems(temp);
+    setSelected([]);
+  }
+
   return cartData.length ? (
     <div className='border-t pt-14 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[5vw]'>
       <div className='text-2xl mb-3'>
@@ -81,7 +92,7 @@ const Cart = () => {
           </Typography>
           <Tooltip>
             <IconButton>
-              {selected.length > 0 ? <RiDeleteBinLine /> : ''}
+              {selected.length > 0 ? <RiDeleteBinLine onClick={handleDeleteSelectedCart} /> : ''}
             </IconButton>
           </Tooltip>
         </Toolbar>
