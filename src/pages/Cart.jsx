@@ -148,9 +148,8 @@ const Cart = () => {
                       </TableCell>
 
                       <TableCell>
-                      <TiDeleteOutline onClick={() => updateQuantity(item.id, item.size, 0)} className='text-[25px] cursor-pointer' />
+                        <TiDeleteOutline onClick={() => updateQuantity(item.id, item.size, 0)} className='text-[25px] cursor-pointer' />
                       </TableCell>
-                      
                   </TableRow>
                   );
                 })
