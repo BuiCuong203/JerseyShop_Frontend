@@ -20,7 +20,7 @@ import { RiDeleteBinLine } from "react-icons/ri";
 
 const Cart = () => {
 
-  const {products, currency, cartItems, setCartItems, updateQuantity, navigate} = useContext(ShopContext);
+  const {products, currency, cartItems, setDataCartItems, updateQuantity, navigate} = useContext(ShopContext);
   const [cartData, setCartData] = useState([]);
   const [selected, setSelected] = useState([]);
 
@@ -37,7 +37,7 @@ const Cart = () => {
         }
       }
     }
-    setCartData(tempData)
+    setCartData(tempData);
   }, [cartItems])
 
   const handleSelectAllClick = (e) => {
@@ -75,8 +75,8 @@ const Cart = () => {
       temp[cartData[item].id][cartData[item].size] = 0;
     }
 
-    setCartItems(temp);
-    setSelected([]);
+    setDataCartItems(temp)
+    setSelected([])
   }
 
   return cartData.length ? (

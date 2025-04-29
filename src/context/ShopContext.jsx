@@ -1,7 +1,8 @@
 import React, { useState, createContext } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { products } from '../assets/frontend_assets/assets';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { setCart, getCart } from '../service/localStorageService'
 
 export const ShopContext = createContext();
 
@@ -9,8 +10,13 @@ const ShopContextProvider = (props) => {
 
   const currency = 'đ';
   const delivery_fee = 10;
-  const [cartItems, setCartItems] = useState({});
+  const [cartItems, setCartItems] = useState(JSON.parse(getCart()) || {});
   const navigate = useNavigate();
+
+  const setDataCartItems = (cartData) => {
+    setCartItems(cartData);
+    setCart(JSON.stringify(cartData));
+  }
 
   const addToCart = (itemId, size, quantity) => {
     var cartData = structuredClone(cartItems);
@@ -29,8 +35,7 @@ const ShopContextProvider = (props) => {
       cartData[itemId] = {};
       cartData[itemId][size] = quantity;
     }
-
-    setCartItems(cartData);
+    setDataCartItems(cartData);
   }
 
   const getCartCount = () => {
@@ -50,7 +55,7 @@ const ShopContextProvider = (props) => {
 
     cartData[itemId][size] = quantity;
 
-    setCartItems(cartData);
+    setDataCartItems(cartData)
   }
 
   const getCartAmount = () => {
@@ -68,9 +73,10 @@ const ShopContextProvider = (props) => {
 
   const value = {
     products, currency, delivery_fee,
-    cartItems, setCartItems, addToCart,
+    cartItems, addToCart,
     getCartCount, updateQuantity,
-    getCartAmount, navigate
+    getCartAmount, navigate,
+    setDataCartItems
   }
 
   return (
