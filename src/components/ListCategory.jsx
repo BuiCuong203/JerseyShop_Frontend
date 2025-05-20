@@ -13,14 +13,18 @@ const ListCategory = () => {
           <Title text={'DANH MỤC'} />
         </div>
         <Carousel
-          renderPrev={() => <Button><GrFormPrevious className="text-[30px] sm:text-[35px] md:text-[40px] text-gray-500" /></Button>}
-          renderNext={() => <Button><GrFormNext className="text-[30px] sm:text-[35px] md:text-[40px] text-gray-500" /></Button>}
-          dots={false}
-          spacing={4}
-          autoPlay
-          infinity="true"
+          renderPrev={({ disabled }) => <Button disabled={disabled}><GrFormPrevious className="text-[30px] sm:text-[35px] md:text-[40px] text-gray-500" /></Button>}
+          renderNext={({ disabled }) => <Button disabled={disabled}><GrFormNext className="text-[30px] sm:text-[35px] md:text-[40px] text-gray-500" /></Button>}
+          dots={true}
           showSlides={5}
-          speed={2000}
+          speed={1000}
+          spacing={5}
+          autoPlay={true}
+          infinity
+          pauseOnHover
+          centerMode
+          transitionDuration={1000}
+          disableTransition={false}
           sx={{
             [`& .${carouselClasses.list}`]: {
               px: 3,
